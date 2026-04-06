@@ -143,6 +143,8 @@
             // 
             dgvEvents.AllowUserToAddRows = false;
             dgvEvents.AllowUserToDeleteRows = false;
+            dgvEvents.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvEvents.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             dgvEvents.BackgroundColor = Color.White;
             dgvEvents.BorderStyle = BorderStyle.None;
             dgvEvents.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -154,7 +156,7 @@
             dgvEvents.ReadOnly = true;
             dgvEvents.RowHeadersVisible = false;
             dgvEvents.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvEvents.Size = new Size(959, 347);
+            dgvEvents.Size = new Size(959, 431);
             dgvEvents.TabIndex = 1;
             // 
             // FormEvents
@@ -162,7 +164,7 @@
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(959, 407);
+            ClientSize = new Size(959, 491);
             Controls.Add(dgvEvents);
             Controls.Add(panel1);
             Font = new Font("Times New Roman", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);

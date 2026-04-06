@@ -63,6 +63,7 @@
             // btnSave
             // 
             btnSave.BackColor = Color.FromArgb(76, 175, 80);
+            btnSave.DialogResult = DialogResult.OK;
             btnSave.FlatAppearance.BorderSize = 0;
             btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Location = new Point(462, 3);
@@ -71,10 +72,12 @@
             btnSave.TabIndex = 6;
             btnSave.Text = "Сохранить";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += BtnSave_Click;
             // 
             // btnCancel
             // 
             btnCancel.BackColor = Color.FromArgb(76, 175, 80);
+            btnCancel.DialogResult = DialogResult.Cancel;
             btnCancel.FlatAppearance.BorderSize = 0;
             btnCancel.FlatStyle = FlatStyle.Flat;
             btnCancel.Location = new Point(354, 3);

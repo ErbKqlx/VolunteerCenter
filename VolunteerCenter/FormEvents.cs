@@ -137,13 +137,20 @@ namespace VolunteerCenter
         private void BtnAdd_Click(object sender, EventArgs e)
         {
             var formAdd = new FormAdd();
-            formAdd.ShowDialog();
+            if (formAdd.ShowDialog() == DialogResult.OK)
+            {
+                LoadEvents();
+            }
         }
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
             var formAdd = new FormAdd((int)dgvEvents.CurrentRow.Cells[0].Value);
-            formAdd.ShowDialog();
+            if (formAdd.ShowDialog() == DialogResult.OK)
+            {
+                LoadEvents();
+            }
+
         }
 
         private void BtnDelete_Click(object sender, EventArgs e)

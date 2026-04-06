@@ -1,9 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
-using VolunteerCenter.Models;
 
-namespace VolunteerCenter;
+namespace VolunteerCenter.Models;
 
 public partial class VolunteerCenterContext : DbContext
 {

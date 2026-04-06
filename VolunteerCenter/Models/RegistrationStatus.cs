@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace VolunteerCenter;
+namespace VolunteerCenter.Models;
 
 public partial class RegistrationStatus
 {

@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace VolunteerCenter;
+namespace VolunteerCenter.Models;
 
-public partial class Place
+public partial class Category
 {
     public int Id { get; set; }
 
-    public string PlaceName { get; set; } = null!;
+    public string CategoryName { get; set; } = null!;
 
     public virtual ICollection<Event> Events { get; set; } = new List<Event>();
 }

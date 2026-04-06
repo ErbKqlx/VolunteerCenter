@@ -117,7 +117,8 @@ namespace VolunteerCenter
 
 
             //}
-            var confirmedRegistrations = e.VolunteerRegistrations.Where(i => i.IdRegistrationStatusNavigation.RegistrationStatusName == "Подтверждено").Count();
+            var confirmedRegistrations = e.VolunteerRegistrations
+                .Count(i => i.IdRegistrationStatusNavigation.RegistrationStatusName == "Подтверждено");
             var percent = (float)confirmedRegistrations / e.RequiredAmount * 100;
 
             return $"Название: {e.EventName}" + Environment.NewLine +
@@ -153,12 +154,32 @@ namespace VolunteerCenter
                 MessageBoxButtons.YesNo,
                 MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                using (var db = new VolunteerCenterContext())
+                try
                 {
-                    var e = db.Events.Find(dgvEvents);
+                    using (var db = new VolunteerCenterContext())
+                    {
+                        var ev = db.Events.Find((int)dgvEvents.CurrentRow.Cells[0].Value);
 
-                    db.Events.Remove();
+
+                        db.Events.Remove(ev);
+                        db.SaveChanges();
+
+                        MessageBox.Show($"Мероприятие удалено",
+                            "Удаление",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Information);
+                    }
                 }
+                catch(Exception ex)
+                {
+                    MessageBox.Show($"Ошибка при удалении: {ex.Message}",
+                        "Ошибка",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error);
+                }
+
+
+                LoadEvents();
             }
         }
 

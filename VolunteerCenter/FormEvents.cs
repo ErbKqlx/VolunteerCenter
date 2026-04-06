@@ -142,7 +142,7 @@ namespace VolunteerCenter
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            var formAdd = new FormAdd();
+            var formAdd = new FormAdd((int)dgvEvents.CurrentRow.Cells[0].Value);
             formAdd.ShowDialog();
         }
 

@@ -147,7 +147,19 @@ namespace VolunteerCenter
 
         private void BtnDelete_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show(
+                "Вы действительно хотите удалить мероприятие?",
+                "Удаление",
+                MessageBoxButtons.YesNo,
+                MessageBoxIcon.Warning) == DialogResult.Yes)
+            {
+                using (var db = new VolunteerCenterContext())
+                {
+                    var e = db.Events.Find(dgvEvents);
 
+                    db.Events.Remove();
+                }
+            }
         }
 
         private void BtnLogout_Click(object sender, EventArgs e)

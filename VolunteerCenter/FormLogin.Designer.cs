@@ -82,6 +82,7 @@
             btnLogin.TabIndex = 5;
             btnLogin.Text = "Войти";
             btnLogin.UseVisualStyleBackColor = false;
+            btnLogin.Click += BtnLogin_Click;
             // 
             // btnGuest
             // 
@@ -94,6 +95,7 @@
             btnGuest.TabIndex = 6;
             btnGuest.Text = "Войти как гость";
             btnGuest.UseVisualStyleBackColor = false;
+            btnGuest.Click += BtnGuest_Click;
             // 
             // FormLogin
             // 
